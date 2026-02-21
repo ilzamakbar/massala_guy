@@ -21,13 +21,29 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Memastikan wrapper memenuhi lebar */
 }
 
 .profile-photo {
-    height: 50vh; 
+    height: 50vh; /* Standar untuk desktop */
     width: auto;
+    max-width: 90%; /* Supaya tidak melebar keluar layar HP */
     object-fit: contain;
     opacity: 0.8; 
+}
+
+/* KHUSUS UNTUK TAMPILAN HP */
+@media screen and (max-width: 600px) {
+    .profile-photo {
+        height: auto;      /* Biar tinggi menyesuaikan lebar */
+        width: 70%;        /* Foto hanya mengambil 70% lebar layar HP */
+        max-width: 300px;  /* Batas maksimal agar tidak terlalu besar */
+    }
+
+    .credits-content p {
+        font-size: 1rem;   /* Ukuran teks sedikit lebih kecil di HP agar pas */
+        padding: 0 10px;   /* Jeda sedikit di pinggir layar */
+    }
 }
 
 .credits-content {
@@ -39,7 +55,6 @@ body, html {
     line-height: 2.8;
     top: 0; 
     left: 0;
-
     animation: scroll-up-loop 45s linear infinite;
 }
 
@@ -55,10 +70,9 @@ p {
 
 @keyframes scroll-up-loop {
     0% {
-        transform: translateY(110vh); 
+        transform: translateY(100vh); 
     }
     100% {
-        /* Mengontrol scroll up & scroll down -350vh atau -400vh */
         transform: translateY(-300vh); 
     }
 }
