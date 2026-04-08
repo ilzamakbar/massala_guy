@@ -15,7 +15,7 @@ body, html {
     position: relative;
 }
 
-/* Wrapper Foto */
+
 .photo-wrapper {
     position: absolute;
     z-index: 1; 
@@ -23,32 +23,29 @@ body, html {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* Mengatur posisi foto agar sedikit lebih ke atas dari tengah */
     top: 45%; 
     transform: translateY(-50%);
 }
 
 .profile-photo {
-    height: 45vh; /* Mengecilkan sedikit dari sebelumnya */
+    height: 45vh; 
     width: auto;
     object-fit: contain;
     opacity: 0.8; 
 }
 
-/* KHUSUS TAMPILAN HP (RESPONSIVE) */
 @media screen and (max-width: 600px) {
     .photo-wrapper {
-        top: 40%; /* Menarik foto lebih ke atas lagi di layar HP */
-    }
+        top: 40%; 
 
     .profile-photo {
-        width: 60%; /* Mengecilkan ukuran lebar foto di HP */
+        width: 60%; 
         height: auto;
-        max-width: 250px; /* Batas maksimal agar tetap kecil */
+        max-width: 250px;
     }
 
     .credits-content p {
-        font-size: 0.95rem; /* Mengecilkan teks agar proporsional dengan foto kecil */
+        font-size: 0.95rem; 
         line-height: 2.5;
     }
 }
@@ -80,6 +77,6 @@ p {
         transform: translateY(100vh); 
     }
     100% {
-        transform: translateY(-350vh); /* Ditambah sedikit karena teks Anda panjang */
+        transform: translateY(-350vh); 
     }
 }
